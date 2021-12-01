@@ -1,0 +1,66 @@
+
+.body{
+  width: 400px;
+  height: auto;
+  margin: 30vh 0 0 50px;
+  transform: translateY(-30%);
+}
+.button{
+  width: 30px;
+  background-color: #006eff;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+.blur-pannel{
+  position: relative;
+}
+.blur-pannel-active{
+  filter: blur(3px);
+  display: absolute;
+  top:0;
+  left: 0;
+}
+.popup-login-hide{
+  display: none;
+}
+.popup-login{
+  display: block;
+  background-color: green;
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  margin: auto;
+  padding: 100px;   
+  text-align: center;
+  border-top-right-radius:50%;
+  border-bottom-left-radius:50%;
+}
+.popup-login h1,.popup-login a,.popup-login p{
+  margin:20px;
+  width: 60%;
+  margin: auto;
+}
+.popup-login a{
+  display: block;
+}
+#close-login{
+  position: absolute;
+  font-size: 40px;
+  top: 0;
+  left: 0;
+}
+.login-head{
+  position: absolute;
+  top: 5%;
+}
+.google-btn{
+  background-color: wheat;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
