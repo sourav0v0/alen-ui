@@ -1,10 +1,8 @@
 import React, { useState, useEffect, createRef} from 'react'
 import { Card, CardActions, CardActionArea, CardContent,CardMedia, Button, Typography } from '@material-ui/core';
-import classNames from 'classnames';
-import useStyles from './styles.js';
+import './style.css';
 
 const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i,activeArticle}) => {
-    const classes = useStyles();
     const [elRefs, setElRefs] = useState([]);
     const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
 
@@ -19,23 +17,21 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
     }, [i, activeArticle, elRefs]);
 
     return (
-        <Card ref={elRefs[i]} className={classNames(classes.card, activeArticle === i ? classes.activeCard : null)}>
-            <CardActionArea href={url} target="_blank">
-                <CardMedia className={classes.media} image={urlToImage || 'https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png' } />
-                <div className={classes.details}>
-                    <Typography variant="body2" color="textSecondary" component="h2">{(new Date(publishedAt)).toDateString()}</Typography>
-                    <Typography variant="body2" color="textSecondary" component="h2">{source.name}</Typography>
+        <div ref={elRefs[i]} class="cart-container">
+            <div href={url} target="_blank">
+                <img class="img" src={urlToImage || 'https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png' } />
+                <div>
+                    <h2>{(new Date(publishedAt)).toDateString()}</h2>
+                    <h2>{source.name}</h2>
                 </div>
-                <Typography className={classes.title} gutterBottom variant="h5">{title}</Typography>
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">{description}</Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.cardActions}>
+                <h5>{title}</h5>
+                <p>{description}</p>
+            </div>
+            <div>
                 <Button size="small" color="primary">Learn More</Button>
-                <Typography variant="h5" color="textSecondary">{i + 1}</Typography>
-            </CardActions>
-        </Card>
+                <h6>{i + 1}</h6>
+            </div>
+        </div>
     )
 }
 

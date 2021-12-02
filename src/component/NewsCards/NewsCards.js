@@ -1,6 +1,5 @@
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
-import { Grid, Grow, Typography } from '@material-ui/core';
 import './style.css';
 
 const infoCards = [
@@ -13,28 +12,27 @@ const infoCards = [
 const NewsCards = ({ articles, activeArticle }) =>{
     if(!articles.length){
         return(
-            <div>
+            <div class="main-container">
                 {
                 infoCards.map((infoCard) => (
-                    <div class="cart-container">
+                <div class="cart-container">
+                    <div class="cart-container-content">
                         <h5>{infoCard.title}</h5>
-                        { 
-                        infoCard.info ? 
-                        (<h6><strong>{infoCard.title.split(' ')[2]};</strong><br />{infoCard.info}</h6>)
-                        : null
-                        }
-                        <h6>Try Saying: <br /> <i>{infoCard.text}</i></h6>
+                        { infoCard.info ? (<h6><strong>{infoCard.title.split(' ')[2]}</strong><br />{infoCard.info}</h6>) : null}
+                        <h6 class="help">Try Saying: <br /> <i>{infoCard.text}</i></h6>
                     </div>
+                </div>
                 ))}
             </div>
         )
     }
 
     return (
+
         <div>
             {
                 articles.map((article, i) => (
-                <div>
+                <div class="main-container">
                     <NewsCard article={article} activeArticle={activeArticle} i={i} />
                 </div>
                 ))
