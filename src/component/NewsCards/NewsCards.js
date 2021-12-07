@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import './style.css';
@@ -9,7 +10,7 @@ const infoCards = [
     { color: '#283593', title: 'News by Sources', info: 'CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...', text: 'Show me the news from CNN' },
   ];
 
-const NewsCards = ({ articles, activeArticle }) =>{
+const NewsCards = ({ articles, activeArticle ,googleId}) =>{
     if(!articles.length){
         return(
             <div class="main-container">
@@ -33,7 +34,7 @@ const NewsCards = ({ articles, activeArticle }) =>{
             {
                 articles.map((article, i) => (
                 <div class="main-container">
-                    <NewsCard article={article} activeArticle={activeArticle} i={i} />
+                    <NewsCard article={article} activeArticle={activeArticle} googleId={googleId} i={i} />
                 </div>
                 ))
             }

@@ -1,16 +1,16 @@
+// eslint-disable-next-line
 import React, { useState, useEffect} from 'react';
+import { useQueryParam, StringParam  } from 'use-query-params';
 import alanBtn from '@alan-ai/alan-sdk-web';
-// import NewsCards from './Components/NewsCards/NewsCards';
-import NewsCards from "../NewsCards/NewsCards"
-import './App.css'
 import wordsToNumbers from 'words-to-numbers';
-// import newlog from './Images/goodnews.png';
+import NewsCards from "../NewsCards/NewsCards"
 import NavBar from '../NavBar/navBar';
+import './App.css'
 import './event.js';
-// import 'https://pro.fontawesome.com/releases/v5.10.0/css/all.css';
 const alankey = 'ee8a65b97399011adbd241011e1d0d032e956eca572e1d8b807a3e2338fdd0dc/stage';
 
-const App = () => {
+export default function App(props) {
+  const googleId = useQueryParam('googleId', StringParam);
   const [newsArticles, setNewsArticles] = useState([]);
   const [activeArticle, setActiveArticle] = useState(-1);
   useEffect(() => {
@@ -37,12 +37,15 @@ const App = () => {
       }
     })
   },[]);
- 
+  // useEffect()
+  console.log(googleId[0]);
   return (
     <div>
       <div class="blur-pannel" id="blur-pannel"> 
-        <NavBar islogin="false"></NavBar>
-         <NewsCards articles={newsArticles} activeArticle={activeArticle}/> 
+        {
+        googleId[0] == undefined ? (<NavBar islogin="false"/>) : (<NavBar islogin="true" googleId={googleId}/>)
+        }
+        <NewsCards articles={newsArticles} activeArticle={activeArticle} googleId={googleId[0]}/> 
         <div class="body">
           <div class="left">
               <h3 class="left-heading">
@@ -57,7 +60,7 @@ const App = () => {
               <a href="#" class="button" id="signUp">Sign Up</a>  
           </div>
         </div>   
-     </div>
+      </div>
       <div class="popup-login-hide" id="popup-login">
         <i class="far fa-times-circle" id="close-login"></i>
         <h1 class="login-head">Login</h1>
@@ -74,4 +77,4 @@ const App = () => {
   );
 }
 
-export default App;
+

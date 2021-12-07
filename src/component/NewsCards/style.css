@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;500&family=Rubik:wght@300;400;500&display=swap');
 *{
     font-family: 'Outfit', sans-serif;
-
 }
 .main-container{
     position: relative;
@@ -20,10 +19,9 @@
     color: white;
 } 
 .cart-container:hover{
-    margin: 1%;
-    width: 24%;
-    background-color: rgb(0, 58, 134);
     border-top: 10px rgb(1, 33, 75) solid;
+    transform: scale(1); 
+    background-color: rgb(0, 58, 134);
 }
 h5{
     font-size: 1.5em;
@@ -32,6 +30,11 @@ h6{
     font-size: 1em;
     font-weight: 100;
     margin-top: 10px;
+}
+@media screen and (min-width: 700px) {
+    .cart-container{
+        width: 40%;
+    } 
 }
 
 /* .cart-container-content{
