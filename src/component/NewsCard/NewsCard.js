@@ -18,7 +18,7 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
         }
     }, [i, activeArticle, elRefs]);
     function clickSend(name){
-        if(googleId!=null || googleId != undefined){
+        if(googleId!==null || googleId !== undefined){
             console.log(" In but not Login ");
         }
         else{

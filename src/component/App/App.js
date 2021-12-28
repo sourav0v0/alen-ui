@@ -7,10 +7,12 @@ import NewsCards from "../NewsCards/NewsCards"
 import NavBar from '../NavBar/navBar';
 import './App.css'
 import './event.js';
+import History from '../Histroy/History';
 const alankey = 'ee8a65b97399011adbd241011e1d0d032e956eca572e1d8b807a3e2338fdd0dc/stage';
 
 export default function App(props) {
   const googleId = useQueryParam('googleId', StringParam);
+  const page = useQueryParam('page',StringParam);
   const [newsArticles, setNewsArticles] = useState([]);
   const [activeArticle, setActiveArticle] = useState(-1);
   useEffect(() => {
@@ -37,13 +39,18 @@ export default function App(props) {
       }
     })
   },[]);
-  // useEffect()
-  console.log(googleId[0]);
   return (
-    <div>
+    <React.Fragment>
+      { page[0] === "contactUs"?contactUs():(page[0] === "history"?history():home())}
+    </React.Fragment>
+  );
+
+  function home(){
+    return (
+      <React.Fragment>
       <div class="blur-pannel" id="blur-pannel"> 
         {
-        googleId[0] == undefined ? (<NavBar islogin="false"/>) : (<NavBar islogin="true" googleId={googleId}/>)
+        googleId[0] === undefined ? (<NavBar islogin="false"/>) : (<NavBar islogin="true" googleId={googleId}/>)
         }
         <NewsCards articles={newsArticles} activeArticle={activeArticle} googleId={googleId[0]}/> 
         <div class="body">
@@ -57,7 +64,7 @@ export default function App(props) {
                 numquam blanditiis harum quisquam eius sed odit 
               </p>
               <a href="#" class="button">Lets Start</a> 
-              <a href="#" class="button" id="signUp">Sign Up</a>  
+              <a href="#" class="button signUp" >Sign Up</a>  
           </div>
         </div>   
       </div>
@@ -72,9 +79,26 @@ export default function App(props) {
             molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
             numquam blanditiis harum quisquam ei
         </p>
-      </div>        
-    </div>
-  );
+      </div>  
+      </React.Fragment>
+    );
+  }
+  
+  function contactUs(){
+    return (<React.Fragment>
+      {
+      googleId[0] === undefined ? (<NavBar islogin="false"/>) : (<NavBar islogin="true" googleId={googleId}/>)
+      }
+      <h1>Drop us a mail</h1>
+      <a href="mailto:atulparte31@gmail.com">atulparte31@gmail.com</a>
+      <a href="mailto:souravprajapati31@gmail.com">souravprajapati31@gmail.com</a>
+      </React.Fragment>);
+  }
+  function history(){
+    return(
+    <History googleId={googleId[0]} />
+    );
+  }
 }
 
 
