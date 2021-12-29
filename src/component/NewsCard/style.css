@@ -6,6 +6,15 @@
 .cart-container img{
     width: 100%;
 }
+.redirect-link{
+    visibility: hidden;
+}
+.learnMore{
+    float: right;
+    height:35px;
+    border-radius: 17.5px;
+    border:2px solid black;
+}
 .cart-container{
     display: block;
     position: relative;

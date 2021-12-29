@@ -7,7 +7,7 @@ import './style.css';
 const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i,activeArticle,googleId}) => {
     const [elRefs, setElRefs] = useState([]);
     const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
-
+    
     useEffect(() => {
         setElRefs((refs) => Array(20).fill().map((_, j) => refs[j] || createRef()))
     }, []);
@@ -17,20 +17,27 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
             scrollToRef(elRefs[activeArticle]);
         }
     }, [i, activeArticle, elRefs]);
-    function clickSend(name){
-        if(googleId!==null || googleId !== undefined){
+    function clickSend(event){
+        var element = event.target;
+        var id = element.getAttribute('element-id');
+        console.log(googleId+"  <--------------------- "+element.getAttribute('source'));
+        if(googleId===null || googleId === undefined){
             console.log(" In but not Login ");
         }
         else{
             axios({
             method: 'post',
-            url: 'http://localhost:3000/postHistory',
-            data: {
-              googleId :googleId,
-              source: name,
-            }
+            url: 'http://localhost:3000/postHistory/?googleId='+googleId+'&source='+element.getAttribute('source'),
+            data: 
+                {
+                googleId :googleId,
+                source: element.getAttribute('source'),
+                }
             });
         }
+        
+        document.getElementsByClassName('redirect-link')[id].click();
+        
     }
     return (
         <div ref={elRefs[i]} class="cart-container">
@@ -44,7 +51,10 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
                 <p>{description}</p>
             </div>
             <div>
-                <Button size="small" color="primary" onClick={clickSend(source.name)} >Learn More</Button>
+                <a href={url} target="_blank" className="redirect-link">----</a>
+                <button className="learnMore" onClick={clickSend} url={url} source={source.name} element-id={i}>
+                    Learn More
+                </button>
             </div>
         </div>
     )

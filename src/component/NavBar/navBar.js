@@ -13,8 +13,8 @@ function NavBar(props){
             props.islogin === "false" ?(<div class="nav-items signUp"><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></div>):
             (
             <React.Fragment>
-                <div class="nav-items"><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></div>
-                <div class="nav-items"><a href={"history.html/?id="+googleId[0]+"&page=history"}><i class="fa fa-sign-in" aria-hidden="true"></i>History</a></div>
+                <div class="nav-items"><a href="http://localhost:3001/"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></div>
+                <div class="nav-items"><a href={"history.html/?googleId="+googleId[0]+"&page=history"}><i class="fa fa-sign-in" aria-hidden="true"></i>History</a></div>
             </React.Fragment>
             )
         }

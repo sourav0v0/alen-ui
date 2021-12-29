@@ -39,6 +39,7 @@ export default function App(props) {
       }
     })
   },[]);
+  var urlGetStarted = "http://localhost:3001/?page=getStarted&googleId="+googleId[0];
   return (
     <React.Fragment>
       {page[0] === "contactUs"?contactUs():(page[0] === "history"?history():page[0] === "getStarted" ? getStarted():home())}
@@ -52,7 +53,6 @@ export default function App(props) {
         {
         googleId[0] === undefined ? (<NavBar islogin="false"/>) : (<NavBar islogin="true" googleId={googleId}/>)
         }
-        <NewsCards articles={newsArticles} activeArticle={activeArticle} googleId={googleId[0]}/> 
         <div class="body">
           <div class="left">
               <h3 class="left-heading">
@@ -63,8 +63,12 @@ export default function App(props) {
                 molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
                 numquam blanditiis harum quisquam eius sed odit 
               </p>
-              <a href="http://localhost:3001/?page=getStarted" class="button">Lets Start</a> 
-              <a href="#" class="button signUp" >Sign Up</a>  
+              {
+              
+              googleId[0] !== undefined ?
+              <a href={urlGetStarted} class="button">Lets Start</a> :
+              <a href="http://localhost:3001/?page=getStarted" class="button">Lets Start</a>
+              }
           </div>
         </div>   
       </div>
