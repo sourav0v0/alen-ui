@@ -10,10 +10,12 @@
     visibility: hidden;
 }
 .learnMore{
-    float: right;
+    position: absolute;
     height:35px;
     border-radius: 17.5px;
     border:2px solid black;
+    right: 40%;
+    bottom: 10px;
 }
 .cart-container{
     display: block;
@@ -27,6 +29,9 @@
     background-color: rgb(246, 176, 66);
     color: black;
 } 
+.cart-container p{  
+    font-weight: 600;
+}
 h2{
     font-size: 1.3em;
 }
