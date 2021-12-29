@@ -30,15 +30,15 @@ const NewsCards = ({ articles, activeArticle ,googleId}) =>{
 
     return (
 
-        <div>
+            <div class="main-container">
             {
                 articles.map((article, i) => (
-                <div class="main-container">
+                
                     <NewsCard article={article} activeArticle={activeArticle} googleId={googleId} i={i} />
-                </div>
+                
                 ))
             }
-        </div>
+            </div>
     )
 }
 

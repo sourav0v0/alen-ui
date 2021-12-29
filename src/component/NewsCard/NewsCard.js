@@ -45,7 +45,6 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
             </div>
             <div>
                 <Button size="small" color="primary" onClick={clickSend(source.name)} >Learn More</Button>
-                <h6>{i + 1}</h6>
             </div>
         </div>
     )

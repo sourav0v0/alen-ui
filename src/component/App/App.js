@@ -41,7 +41,7 @@ export default function App(props) {
   },[]);
   return (
     <React.Fragment>
-      { page[0] === "contactUs"?contactUs():(page[0] === "history"?history():home())}
+      {page[0] === "contactUs"?contactUs():(page[0] === "history"?history():page[0] === "getStarted" ? getStarted():home())}
     </React.Fragment>
   );
 
@@ -63,7 +63,7 @@ export default function App(props) {
                 molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
                 numquam blanditiis harum quisquam eius sed odit 
               </p>
-              <a href="#" class="button">Lets Start</a> 
+              <a href="http://localhost:3001/?page=getStarted" class="button">Lets Start</a> 
               <a href="#" class="button signUp" >Sign Up</a>  
           </div>
         </div>   
@@ -97,6 +97,16 @@ export default function App(props) {
   function history(){
     return(
     <History googleId={googleId[0]} />
+    );
+  }
+  function getStarted(){
+    return (
+      <React.Fragment>
+        {
+        googleId[0] === undefined ? (<NavBar islogin="false"/>) : (<NavBar islogin="true" googleId={googleId}/>)
+        }
+        <NewsCards articles={newsArticles} activeArticle={activeArticle} googleId={googleId[0]}/>        
+      </React.Fragment>
     );
   }
 }
