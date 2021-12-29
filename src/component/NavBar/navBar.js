@@ -10,7 +10,10 @@ function NavBar(props){
         </div>
         <div class="nav-links">
         {
-            props.islogin === "false" ?(<div class="nav-items signUp"><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></div>):
+            (props.islogin === "false" && props.isDisable === "false")?
+            (<div class="nav-items signUp"><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></div>):
+            (props.islogin === "false") ?
+            (<div></div>):
             (
             <React.Fragment>
                 <div class="nav-items"><a href="http://localhost:3001/"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></div>
@@ -18,7 +21,16 @@ function NavBar(props){
             </React.Fragment>
             )
         }
-        <div class="nav-items">Contact</div>
+        {
+            (googleId[0] === null || googleId[0] === undefined) ?
+            <div className="nav-items"><a href={"http://localhost:3001/?page=contactUs"}><i class="fa fa-sign-in" aria-hidden="true"></i>Contact</a></div>:
+            <div className="nav-items"><a href={"http://localhost:3001/?googleId="+googleId[0]+"&page=contactUs"}><i class="fa fa-sign-in" aria-hidden="true"></i>Contact</a></div>
+        }
+        {
+         (googleId[0] === null || googleId[0] === undefined) ?
+            <div className="nav-items"><a href={"http://localhost:3001/"}><i class="fa fa-sign-in" aria-hidden="true"></i>Home</a></div>:
+            <div className="nav-items"><a href={"http://localhost:3001/?googleId="+googleId[0]}><i class="fa fa-sign-in" aria-hidden="true"></i>Home</a></div>
+        }
         </div>
     </nav>
     ;

@@ -1,13 +1,47 @@
 
 .body{
-  width: 400px;
-  height: auto;
+  max-width: 100%;
+  height: 400px;
   margin: 30vh 0 0 50px;
   transform: translateY(-30%);
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+a{
+  text-decoration: none; 
+  color: rgb(246, 176, 66);
+}
+.left{
+  width: 500px;
+}
+.right{
+  margin-right: 180px;
+  
+}
+.right img{
+  position:  relative;
+  top: 30px;
+  height: 100%;
+  transform: translateX(30px);
+  animation: hand 10s infinite;
+  transform-origin: 200px 333px;
+}
+@keyframes hand {
+  0%{
+    transform: rotate(35deg);
+  }
+  50%{
+    transform: rotate(-25deg);
+  }
+  100%{
+    transform: rotate(35deg);
+  }
 }
 .button{
   width: 30px;
-  background-color: #006eff;
+  background-color: rgb(246, 176, 66);
   margin: 5px;
   padding: 10px;
   border-radius: 20px;
@@ -29,7 +63,8 @@
 }
 .popup-login{
   display: block;
-  background-color: green;
+  background-color: rgb(246, 176, 66);
+  color: black;
   position: absolute;
   top : 50%;
   left: 50%;
@@ -51,16 +86,388 @@
 #close-login{
   position: absolute;
   font-size: 40px;
-  top: 0;
-  left: 0;
+  top: 8px;
+  left: 8px;
 }
+
 .login-head{
   position: absolute;
-  top: 5%;
+  top: 10%;
+  transform: translateX(35px);
 }
 .google-btn{
   background-color: wheat;
+  border-radius: 5px;
   padding: 10px;
   color: black;
   text-decoration: none;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif  !important;
+}
+.contact-page{
+  display: block;
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+.login-desc{
+  padding-top: 20px;
+  font-weight: 400;
+}
+.contact-page a {
+  display: block;
+  padding:10px;
+  text-decoration: none;
+  color:rgb(246, 176, 66);
+  text-transform: uppercase;
+  border-radius: 3px;
+  border-bottom: 3px solid rgb(246, 176, 66);
+  margin-top: 5px;
+}
+.contact-page a:hover{
+  color:white;  
+  animation: mailBox-animate 1s forwards alternate;
+}
+@keyframes mailBox-animate {
+  0%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 0%, #ffa50000 0% 100%); 
+  }     
+1%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 1%, #ffa50000 1% 99%); 
+  }     
+2%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 2%, #ffa50000 2% 98%); 
+  }     
+3%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 3%, #ffa50000 3% 97%); 
+  }     
+4%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 4%, #ffa50000 4% 96%); 
+  }     
+5%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 5%, #ffa50000 5% 95%); 
+  }     
+6%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 6%, #ffa50000 6% 94%); 
+  }     
+7%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 7%, #ffa50000 7% 93%); 
+  }     
+8%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 8%, #ffa50000 8% 92%); 
+  }     
+9%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 9%, #ffa50000 9% 91%); 
+  }     
+10%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 10%, #ffa50000 10% 90%); 
+  }     
+11%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 11%, #ffa50000 11% 89%); 
+  }     
+12%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 12%, #ffa50000 12% 88%); 
+  }     
+13%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 13%, #ffa50000 13% 87%); 
+  }     
+14%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 14%, #ffa50000 14% 86%); 
+  }     
+15%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 15%, #ffa50000 15% 85%); 
+  }     
+16%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 16%, #ffa50000 16% 84%); 
+  }     
+17%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 17%, #ffa50000 17% 83%); 
+  }     
+18%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 18%, #ffa50000 18% 82%); 
+  }     
+19%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 19%, #ffa50000 19% 81%); 
+  }     
+20%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 20%, #ffa50000 20% 80%); 
+  }     
+21%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 21%, #ffa50000 21% 79%); 
+  }     
+22%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 22%, #ffa50000 22% 78%); 
+  }     
+23%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 23%, #ffa50000 23% 77%); 
+  }     
+24%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 24%, #ffa50000 24% 76%); 
+  }     
+25%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 25%, #ffa50000 25% 75%); 
+  }     
+26%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 26%, #ffa50000 26% 74%); 
+  }     
+27%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 27%, #ffa50000 27% 73%); 
+  }     
+28%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 28%, #ffa50000 28% 72%); 
+  }     
+29%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 29%, #ffa50000 29% 71%); 
+  }     
+30%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 30%, #ffa50000 30% 70%); 
+  }     
+31%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 31%, #ffa50000 31% 69%); 
+  }     
+32%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 32%, #ffa50000 32% 68%); 
+  }     
+33%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 33%, #ffa50000 33% 67%); 
+  }     
+34%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 34%, #ffa50000 34% 66%); 
+  }     
+35%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 35%, #ffa50000 35% 65%); 
+  }     
+36%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 36%, #ffa50000 36% 64%); 
+  }     
+37%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 37%, #ffa50000 37% 63%); 
+  }     
+38%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 38%, #ffa50000 38% 62%); 
+  }     
+39%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 39%, #ffa50000 39% 61%); 
+  }     
+40%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 40%, #ffa50000 40% 60%); 
+  }     
+41%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 41%, #ffa50000 41% 59%); 
+  }     
+42%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 42%, #ffa50000 42% 58%); 
+  }     
+43%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 43%, #ffa50000 43% 57%); 
+  }     
+44%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 44%, #ffa50000 44% 56%); 
+  }     
+45%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 45%, #ffa50000 45% 55%); 
+  }     
+46%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 46%, #ffa50000 46% 54%); 
+  }     
+47%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 47%, #ffa50000 47% 53%); 
+  }     
+48%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 48%, #ffa50000 48% 52%); 
+  }     
+49%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 49%, #ffa50000 49% 51%); 
+  }     
+50%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 50%, #ffa50000 50% 50%); 
+  }     
+51%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 51%, #ffa50000 51% 49%); 
+  }     
+52%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 52%, #ffa50000 52% 48%); 
+  }     
+53%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 53%, #ffa50000 53% 47%); 
+  }     
+54%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 54%, #ffa50000 54% 46%); 
+  }     
+55%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 55%, #ffa50000 55% 45%); 
+  }     
+56%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 56%, #ffa50000 56% 44%); 
+  }     
+57%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 57%, #ffa50000 57% 43%); 
+  }     
+58%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 58%, #ffa50000 58% 42%); 
+  }     
+59%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 59%, #ffa50000 59% 41%); 
+  }     
+60%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 60%, #ffa50000 60% 40%); 
+  }     
+61%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 61%, #ffa50000 61% 39%); 
+  }     
+62%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 62%, #ffa50000 62% 38%); 
+  }     
+63%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 63%, #ffa50000 63% 37%); 
+  }     
+64%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 64%, #ffa50000 64% 36%); 
+  }     
+65%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 65%, #ffa50000 65% 35%); 
+  }     
+66%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 66%, #ffa50000 66% 34%); 
+  }     
+67%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 67%, #ffa50000 67% 33%); 
+  }     
+68%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 68%, #ffa50000 68% 32%); 
+  }     
+69%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 69%, #ffa50000 69% 31%); 
+  }     
+70%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 70%, #ffa50000 70% 30%); 
+  }     
+71%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 71%, #ffa50000 71% 29%); 
+  }     
+72%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 72%, #ffa50000 72% 28%); 
+  }     
+73%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 73%, #ffa50000 73% 27%); 
+  }     
+74%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 74%, #ffa50000 74% 26%); 
+  }     
+75%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 75%, #ffa50000 75% 25%); 
+  }     
+76%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 76%, #ffa50000 76% 24%); 
+  }     
+77%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 77%, #ffa50000 77% 23%); 
+  }     
+78%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 78%, #ffa50000 78% 22%); 
+  }     
+79%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 79%, #ffa50000 79% 21%); 
+  }     
+80%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 80%, #ffa50000 80% 20%); 
+  }     
+81%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 81%, #ffa50000 81% 19%); 
+  }     
+82%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 82%, #ffa50000 82% 18%); 
+  }     
+83%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 83%, #ffa50000 83% 17%); 
+  }     
+84%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 84%, #ffa50000 84% 16%); 
+  }     
+85%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 85%, #ffa50000 85% 15%); 
+  }     
+86%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 86%, #ffa50000 86% 14%); 
+  }     
+87%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 87%, #ffa50000 87% 13%); 
+  }     
+88%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 88%, #ffa50000 88% 12%); 
+  }     
+89%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 89%, #ffa50000 89% 11%); 
+  }     
+90%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 90%, #ffa50000 90% 10%); 
+  }     
+91%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 91%, #ffa50000 91% 9%); 
+  }     
+92%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 92%, #ffa50000 92% 8%); 
+  }     
+93%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 93%, #ffa50000 93% 7%); 
+  }     
+94%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 94%, #ffa50000 94% 6%); 
+  }     
+95%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 95%, #ffa50000 95% 5%); 
+  }     
+96%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 96%, #ffa50000 96% 4%); 
+  }     
+97%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 97%, #ffa50000 97% 3%); 
+  }     
+98%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 98%, #ffa50000 98% 2%); 
+  }     
+99%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 99%, #ffa50000 99% 1%); 
+  }     
+100%{
+    background:linear-gradient(to top, rgb(246, 176, 66) 100%, #ffa50000 100% 0%); 
+  }     
+
+}
+
+.contact-page img {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  float: left;
+  background-color: #f6b042;
+  border-radius:20px;
+  animation: email-logo 1s infinite;
+}
+.left-heading{
+  text-align: center;
+  font-size: 50px;
+  margin: 5px;
+}
+.left-text{
+  padding: 0 20px;
+  font-size: 20px;
+}
+.getStarted{
+  display: block;
+  width: 90px;
+  margin: auto;
+  transform: translateX(-10%);
+}
+
+@keyframes email-logo{
+  0%{
+    top: -1px;
+  }
+  50%{
+    top: -8px;
+  }
+  100%{
+    top: -1px;
+  }
 }

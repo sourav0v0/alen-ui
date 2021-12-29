@@ -1,0 +1,15 @@
+select{
+    width: 150px;
+    height: 37px;
+    display: block;
+    margin: auto;
+    border-radius: 2px;
+    border: 2px solid black;
+}
+.graph-container{
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}

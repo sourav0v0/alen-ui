@@ -2,6 +2,8 @@ import axios from 'axios'
 import React from 'react'
 import NavBar from '../NavBar/navBar'
 import { Chart } from "react-google-charts";
+import './style.css';
+
 class History extends React.Component {
     constructor(props) {
         super(props);
@@ -15,9 +17,15 @@ class History extends React.Component {
             data1: [
                 ["News", "CNN", "BCC", "CNN"],
                 ["2021", 2, 15, 10],
-            ]
+            ],
+            type : 'none',
         };
         
+    }
+    stateChange = (event)=>{
+        var value = document.getElementById('historyGraph').value;
+        this.setState({type: value});
+        console.log(value);
     }
     componentDidMount() {
         var response = null;
@@ -42,13 +50,9 @@ class History extends React.Component {
                 this.setState({ data : tempData,data1:tempData2});
             });
         }   
-
     }
-    
-    
-    
     render(){
-        const { data ,data1 } = this.state;
+        const { data ,data1 ,type} = this.state;
         var options = {
             title: "My Daily Activities",
         };
@@ -57,22 +61,25 @@ class History extends React.Component {
             legend: { position: "none" },
           };
         return( <div>
-            <NavBar islogin="true" /> 
-               <Chart
-                chartType="PieChart"
-                data={data}
-                options={options}
-                width={"100%"}
-                height={"400px"}/>
-            <Chart
-                chartType="Bar"
-                data={data1}
-                options={options}
-                width={"100%"}
-                height={"400px"}
-                />
+            <NavBar islogin="true"  isDisable="false"/> 
+            <select name="graphs" onChange={this.stateChange} id="historyGraph">
+                <option value="-">Choose Graph</option>
+                <option value="pie">Pie Chart</option>
+                <option value="bar">Bar Graph</option>
+            </select>
+            <div className='graph-container'>
+            {
+            type === "pie" ?
+            <Chart chartType="PieChart" data={data} options={options} width={"100%"} height={"480px"} st/>:
+            type === "bar"?
+            <Chart chartType="Bar" data={data1} options={options} width={"100%"} height={"480px"}/>
+            :
+            <div></div>
+            }
+            </div>
             </div>
         );
-      }
+    }
+      
 }
 export default History;
