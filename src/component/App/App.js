@@ -91,9 +91,7 @@ export default function App(props) {
             <i class="fab fa-google">  Sign In with Google </i>
         </a> 
         <p class="login-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-            numquam blanditiis harum quisquam ei
+           Login to the only if you want us to track your news reading habites and present them to You..
         </p>
       </div>  
       </React.Fragment>
